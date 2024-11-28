@@ -29,6 +29,21 @@ After starting the service, verify it is running:
 ``` bash
 Get-Service sshd
 ```
+You should see the service listed as Running.
 
 
+## 5. Test SSH Connection
+Once the OpenSSH server is running, test the connection from your Raspberry Pi:
 
+``` bash
+ssh your_username@ip_address_of_PC
+# example: mypc@172.16.12.74
+```
+
+## 6. Retry SCP File Transfer
+
+Once SSH is confirmed to be working, retry the file transfer:
+
+``` bash
+scp /home/zobaerpi/catkin_ws/src/test/src/picture/* your_username@172.16.12.74:/e/RaspberryPi/
+```
